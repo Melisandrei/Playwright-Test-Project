@@ -28,7 +28,7 @@ public class HelloWorldTest {
             searchBox.first().click();
             searchBox.first().fill("Hello World");
 
-            // Optionally click the search button if present
+            // Click the search button if present
             Locator searchButton = page.locator("input[name='btnK']");
             if (searchButton.count() > 0) {
                 searchButton.first().click();
