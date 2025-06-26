@@ -13,8 +13,8 @@ public class HelloWorldTest {
             // Handle consent dialog if present
             try {
                 Locator acceptButton = page.locator("button:has-text('Accept all'), button:has-text('I agree')");
-                if (acceptButton.first().isVisible(new Locator.IsVisibleOptions().setTimeout(3000))) {
-                    acceptButton.first().click();
+                if (acceptButton.isVisible(new Locator.IsVisibleOptions().setTimeout(3000))) {
+                    acceptButton.click();
                 }
             } catch (PlaywrightException ignored) {}
 
@@ -25,13 +25,13 @@ public class HelloWorldTest {
                 browser.close();
                 return;
             }
-            searchBox.first().click();
-            searchBox.first().fill("Hello World");
+            searchBox.click();
+            searchBox.fill("Hello World");
 
             // Click the search button if present
             Locator searchButton = page.locator("input[name='btnK']");
             if (searchButton.count() > 0) {
-                searchButton.first().click();
+                searchButton.click();
             }
 
             browser.close();
